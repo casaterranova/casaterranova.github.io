@@ -49,3 +49,8 @@ h2,
     content: '| ';
   }
 }
+.ithumb {
+  margin: 10px;
+  margin-bottom: 10px;
+  float: left;
+}

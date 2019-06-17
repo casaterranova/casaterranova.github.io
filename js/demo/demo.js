@@ -13,51 +13,55 @@
 
 $(function () {
   'use strict'
-  let imgs = [
-    'imgs/banheiro.jpeg',
-    'imgs/cozinha.jpeg'
+  let imgsall = [
+    'banheiro.jpeg',
+    'banheiro2.jpeg',
+    'cozinha.jpeg',
+    'cozinha2.jpeg',
+    'cozinha3.jpeg',
+    'fachada.jpeg',
+    'fachada2.jpeg',
+    'frente.jpeg',
+    'frente2.jpeg',
+    'fundo.jpeg',
+    'fundo2.jpeg',
+    'fundo3.jpeg',
+    'lavanderia.jpeg',
+    'quarto.jpeg',
+    'quarto2.jpeg',
+    'sala.jpeg',
+    'sala2.jpeg',
+    'sala3.jpeg',
+    'sala4.jpeg',
+    'sala5.jpeg'
   ]
 
-let imgsall = [
-  'banheiro.jpeg',
-  'banheiro2.jpeg',
-  'cozinha.jpeg',
-  'cozinha2.jpeg',
-  'cozinha3.jpeg',
-  'fachada.jpeg',
-  'fachada2.jpeg',
-  'frente.jpeg',
-  'frente2.jpeg',
-  'fundo.jpeg',
-  'fundo2.jpeg',
-  'fundo3.jpeg',
-  'lavanderia.jpeg',
-  'quarto.jpeg',
-  'quarto2.jpeg',
-  'sala.jpeg',
-  'sala2.jpeg',
-  'sala3.jpeg',
-  'sala4.jpeg',
-  'sala5.jpeg'
-]
-
-let imgs_best = [
-]
-
+  let imgsbest = [
+    'cozinha3.jpeg',
+    'fachada2.jpeg',
+    'quarto.jpeg',
+    'sala.jpeg',
+  ]
 
   // Load demo images from flickr:
   var carouselLinks = []
   var linksContainer = $('#links')
   var baseUrl
+  var baseUrl_
   // Add the demo images as links with thumbnails to the page:
-  $.each(imgs, function (index, photo) {
-    baseUrl = photo
+  $.each(imgsall, function (index, photo) {
+    baseUrl = 'imgs/' + photo
+    baseUrl_ = 'imgs/thumb.' + photo
     $('<a/>')
-      .append($('<img>').prop('src', baseUrl))
+      .append($('<img>').prop('src', baseUrl_))
       .prop('href', baseUrl)
+      .addClass('ithumb')
       .prop('title', 'afoto')
       .attr('data-gallery', '')
       .appendTo(linksContainer)
+  })
+  $.each(imgsbest, function (index, photo) {
+    baseUrl = 'imgs/' + photo
     carouselLinks.push({
       href: baseUrl,
       title: 'afoto'
